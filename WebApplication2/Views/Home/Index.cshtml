@@ -1,0 +1,64 @@
+﻿@{
+    string selectedAfdeling = ViewBag.SelectedAfdeling as string; 
+}
+<h1>Tidsregistrering</h1>
+
+@using (Html.BeginForm("Index", "Home"))
+{
+    <div class="form-container">
+        @Html.DropDownList("Afdelinger", ViewBag.Afdelingerne as List<SelectListItem>, "Afdelinger", new { @class = "form-group" })
+    </div>
+
+    <button class="form-containerButton" type="submit" name="AfdelingValg" value="AfdelingValg">Vælg Afdeling </button>
+
+}
+@if (!string.IsNullOrEmpty(selectedAfdeling))
+{
+    @using (Html.BeginForm("OpretTid", "Home"))
+    {
+        <div class="container">
+            <div class="row mb-3">
+                <label for="Afdeling" class="col-sm-2 col-form-label">Afdeling:</label>
+                <div class="col-sm-10">
+                    @Html.DropDownList("afdelinger", null, "Vælg en afdeling", new { @class = "form-select", @id = "Afdeling" })
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Medarbejder" class="col-sm-2 col-form-label">Medarbejder:</label>
+                <div class="col-sm-10">
+                    @Html.DropDownList("medarbejdere", null, "Vælg en medarbejder", new { @class = "form-select", @id = "Medarbejder" })
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row mb-3">
+                <label for="startDate" class="col-sm-2 col-form-label">Start Tid:</label>
+                <div class="col-sm-10">
+                    @Html.TextBox("startDate", null, new { @class = "form-control", @id = "startDate", @type = "datetime-local" })
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="endDate" class="col-sm-2 col-form-label">Slut Tid:</label>
+                <div class="col-sm-10">
+                    @Html.TextBox("endDate", null, new { @class = "form-control", @id = "endDate", @type = "datetime-local" })
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="Sager" class="col-sm-2 col-form-label">Sager:</label>
+                <div class="col-sm-10">
+                    @Html.DropDownList("Sager", ViewBag.Sager as List<SelectListItem>)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 offset-sm-2">
+                    <button type="submit" class="btn btn-primary">Opret</button>
+                    @Html.Hidden("SelectedAfdeling", selectedAfdeling)
+                </div>
+            </div>
+        </div>
+    }
+}
+
+

@@ -1,0 +1,19 @@
+MAUI TIL ADMINISTRATIV BRUG
+Krav til WPF App eller MAUI App
+a. Oprette og vedligeholde data for medarbejdere og afdelinger (afdelinger må gerne være
+hardcoded).
+b. Vise en oversigt over medarbejdere og deres timeregistrering.
+c. Timeregistrering skal kunne vises per uge og per måned og total.
+d. Appen tilgår business laget enten direkte eller via en udstilling af business laget som et Web
+API.
+e. Oprette og vedligeholde sager til tidsregistrering.
+
+MVC TIL MEDARBEJDER TIDSREGISTRERING
+a. MVC App til registrering af arbejdstid for den enkelte medarbejder. Afdelinger må gerne 
+være hard-coded i en DropDown box.
+b. Der skal registreres 37 timer per uge for hver medarbejder.
+c. Der skal kunne vælges Sag til tidsregistrering fra en liste af sager (denne er oprettet fra
+WPF/MAUI App).
+
+
+//Claus nævner collection view i stedet for listview
