@@ -1,0 +1,40 @@
+@model List<WebApplication2.Controllers.HomeController.MedarbejderUgeTimerViewModel>
+
+@{
+    ViewData["Title"] = "Timer";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h2>Medarbejdere</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Navn</th>
+        <th>Uge</th>
+        <th>Timer</th>
+    </tr>
+    </thead>
+    <tbody>
+    @if (Model != null && Model.Any())
+    {
+        foreach (var medarbejder in Model)
+        {
+            foreach (var ugeData in medarbejder.UgeTimer)
+            {
+                <tr>
+                    <td>@medarbejder.Navn</td>
+                    <td>@ugeData.Uge</td>
+                    <td>@ugeData.Timer.ToString("F2")</td>
+                </tr>
+            }
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="3">Ingen data tilgængelig</td>
+        </tr>
+    }
+    </tbody>
+</table>

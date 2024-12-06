@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.OpretAfdeling">
+    <ContentPage.Content>
+        <HorizontalStackLayout Spacing ="20" HorizontalOptions="Center">
+            <VerticalStackLayout Spacing="5">
+                <HorizontalStackLayout>
+                    <Label Text="Navn" FontAttributes="Bold"/>
+                    <Entry x:Name="Navn" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Nummer" FontAttributes="Bold"/>
+                    <Entry x:Name="Nummer" />
+                </HorizontalStackLayout>
+                <Button Text ="Opret afdeling" Clicked="AddAfdeling"/>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+    </ContentPage.Content>
+</ContentPage>

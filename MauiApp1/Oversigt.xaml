@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Oversigt">
+        <StackLayout Padding="30,30" Spacing="50">
+            <CollectionView x:Name ="Tidview">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <HorizontalStackLayout Spacing ="20" HorizontalOptions="Center">
+                            <VerticalStackLayout Spacing="5">
+                                <HorizontalStackLayout>
+                                    <Label Text="Navn" FontAttributes="Bold"/>
+                                    <Label Text="{Binding  Name}" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label Text="Ugeummer" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Ugenummer}" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label Text="Timer" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Timer}" />
+                                    </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            </StackLayout>
+</ContentPage>

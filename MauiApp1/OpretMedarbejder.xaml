@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.OpretMedarbejder">
+    <ContentPage.Content>
+        <HorizontalStackLayout Spacing ="20" HorizontalOptions="Center">
+            <VerticalStackLayout Spacing="5">
+                <HorizontalStackLayout>
+                    <Label Text="Initial" FontAttributes="Bold"/>
+                    <Entry x:Name="Initial" />
+                    </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="CPR" FontAttributes="Bold"/>
+                    <Entry x:Name="CPR" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Navn" FontAttributes="Bold"/>
+                    <Entry x:Name="Navn" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Picker x:Name="AfdelingsPicker" ItemsSource="{Binding Afdelinger}" ItemDisplayBinding="{Binding Navn}" />
+                </HorizontalStackLayout>
+                <Button Text ="Opret medarbejder" Clicked="AddMedarbejder"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+    </ContentPage.Content>
+</ContentPage>
